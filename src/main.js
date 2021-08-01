@@ -8,8 +8,8 @@ import 'element-ui/lib/theme-chalk/index.css'
 import '../statics/styles/global.less'
 import {get, post, put, deleteDate} from './utils/http.js'
 import createStore from './store/store.js'
-import pmt from 'pmt-seed'
-pmt('news_admin',Vue,'http://localhost:3010')
+// import pmt from 'pmt-seed'
+// pmt('news_admin',Vue,'http://localhost:3010')
 Vue.prototype.$get = get
 Vue.prototype.$post = post
 Vue.prototype.$put = put
