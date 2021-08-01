@@ -125,7 +125,7 @@ if (isDev) {
         //非指定命名文件
         runtimeChunk: true
     };
-    config.rules.push(
+    config.module.rules.push(
         {
             test: /\.(js|vue)$/,
             //eslint代码规范
