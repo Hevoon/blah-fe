@@ -125,22 +125,22 @@ if (isDev) {
         //非指定命名文件
         runtimeChunk: true
     };
-    config.module.rules.push(
-        {
-            test: /\.(js|vue)$/,
-            //eslint代码规范
-            loader: 'eslint-loader',
-            enforce: "pre",
-            exclude: [
-                // 隔离node_modules
-                path.resolve(__dirname, '../node_modules')
-            ],
-            options: {
-                //自动修复
-                fix: true
-            }
-        }
-    );
+    // config.module.rules.push(
+    //     {
+    //         test: /\.(js|vue)$/,
+    //         //eslint代码规范
+    //         loader: 'eslint-loader',
+    //         enforce: "pre",
+    //         exclude: [
+    //             // 隔离node_modules
+    //             path.resolve(__dirname, '../node_modules')
+    //         ],
+    //         options: {
+    //             //自动修复
+    //             fix: true
+    //         }
+    //     }
+    // );
     config.plugins.push(
         // new ExtractPlugin('styles.[contentHash:8].css')
     )
