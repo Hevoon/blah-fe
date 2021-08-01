@@ -1,34 +1,38 @@
 <template>
-    <div class="app" v-loading.fullscreen.lock="Loading" element-loading-background="rgba(255,255,255,1)">
-        <Head></Head>
-        <transition name="fade">
-            <router-view ></router-view>
-        </transition>
-    </div>
+  <div
+    class="app"
+    v-loading.fullscreen.lock="Loading"
+    element-loading-background="rgba(255,255,255,1)"
+  >
+    <Head />
+    <transition name="fade">
+      <router-view />
+    </transition>
+  </div>
 </template>
 
 <script>
-    import Head from './views/head/head.vue'
+import Head from './views/head/head.vue'
 
-    export default {
-        components: {
-            Head
-        },
-        data() {
-            return {
-                Loading: false
-            }
-        },
-        watch: {
-            '$route': function (to, from) {
-                this.Loading = true;
-                let self = this;
-                setTimeout(() => {
-                    self.Loading = false
-                }, 500)
-            }
+export default {
+    components: {
+        Head
+    },
+    data() {
+        return {
+            Loading: false
+        }
+    },
+    watch: {
+        '$route': function (to, from) {
+            this.Loading = true
+            let self = this
+            setTimeout(() => {
+                self.Loading = false
+            }, 500)
         }
     }
+}
 </script>
 
 <!--不可以使用type属性-->

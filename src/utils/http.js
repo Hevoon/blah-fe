@@ -1,10 +1,9 @@
 //封装常用方法
 
-import axios from 'axios';
+import axios from 'axios'
 
 // axios.defaults.timeout = 5000;
-axios.defaults.baseURL = 'http://localhost:3000';
-
+axios.defaults.baseURL = 'http://localhost:3000'
 
 //封装get方法
 export function get(url, params = {}) {
@@ -13,10 +12,10 @@ export function get(url, params = {}) {
             params: params
         })
             .then(response => {
-                resolve(response);
+                resolve(response)
             })
             .catch(err => {
-                reject(err);
+                reject(err)
             })
     })
 }
@@ -26,10 +25,10 @@ export function post(url, data = {},config={}) {
     return new Promise((resolve, reject) => {
         axios.post(url, data,config)
             .then(response => {
-                resolve(response);
+                resolve(response)
             })
             .catch(err => {
-                reject(err);
+                reject(err)
             })
     })
 }
@@ -39,10 +38,10 @@ export function put(url, data = {}) {
     return new Promise((resolve, reject) => {
         axios.put(url, data)
             .then(response => {
-                resolve(response);
+                resolve(response)
             })
             .catch(err => {
-                reject(err);
+                reject(err)
             })
     })
 }
@@ -52,10 +51,10 @@ export function deleteDate(url){
     return new Promise((resolve, reject) => {
         axios.delete(url)
             .then(response => {
-                resolve(response);
+                resolve(response)
             })
             .catch(err => {
-                reject(err);
+                reject(err)
             })
     })
 }

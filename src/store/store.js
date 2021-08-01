@@ -18,27 +18,27 @@ export default () => {
         },
         mutations: {
             changeTurnWhite(state) {
-                state.turn = true;
+                state.turn = true
             },
             changeTurnBlack(state) {
-                state.turn = false;
+                state.turn = false
             },
             //获取最新资讯
             getNowNews(state) {
                 axios.get('/getTopic').then(
                     (res) => {
-                        console.log(res);
-                        state.news = res.data;
+                        console.log(res)
+                        state.news = res.data
                         state.pageNews = state.news.slice(0, 8)
                     }
                 ).catch((e) => {
                     console.log(e)
-                });
+                })
             },
             //改变最新资讯当前页面内容
             changePageNews(state, currentPage) {
-                let start = (currentPage - 1) * 8;
-                let end = (currentPage) * 8;
+                let start = (currentPage - 1) * 8
+                let end = (currentPage) * 8
                 state.pageNews = state.news.slice(start, end)
             },
             getAllNews(state, row) {
@@ -48,18 +48,18 @@ export default () => {
                     }
                 }).then(
                     (res) => {
-                        console.log(res);
-                        state.allNews = res.data;
+                        console.log(res)
+                        state.allNews = res.data
                         state.allPageNews = state.allNews.slice(0, 8)
                     }
                 ).catch((e) => {
                     console.log(e)
-                });
+                })
             },
             //改变最新资讯当前页面内容
             changePageAllNews(state, currentPage) {
-                let start = (currentPage - 1) * 8;
-                let end = (currentPage) * 8;
+                let start = (currentPage - 1) * 8
+                let end = (currentPage) * 8
                 setTimeout(function () {
                     state.allPageNews = state.allNews.slice(start, end)
                 }, 0)
@@ -67,13 +67,13 @@ export default () => {
             getAllRegion(state) {
                 axios.get('/region').then(
                     (res) => {
-                        console.log(res);
-                        state.allRegion = res.data;
+                        console.log(res)
+                        state.allRegion = res.data
                         console.log(state.allRegion)
                     }
                 ).catch((e) => {
                     console.log(e)
-                });
+                })
             }
         }
     })

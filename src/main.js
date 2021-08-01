@@ -10,16 +10,15 @@ import {get, post, put, deleteDate} from './utils/http.js'
 import createStore from './store/store.js'
 import pmt from 'pmt-seed'
 pmt('news_admin',Vue,'http://localhost:3010')
-Vue.prototype.$get = get;
-Vue.prototype.$post = post;
-Vue.prototype.$put = put;
-Vue.prototype.$delete = deleteDate;
+Vue.prototype.$get = get
+Vue.prototype.$post = post
+Vue.prototype.$put = put
+Vue.prototype.$delete = deleteDate
 import createRouter from '../config/router'
 
 Vue.use(ElementUI)
 Vue.use(VueRouter)
 Vue.use(Vuex)
-
 
 const router = createRouter()
 const store = createStore()
